@@ -1,13 +1,16 @@
 <iframe
-  class="w-full h-full absolute" [src]="videoUrl" frameborder="0"></iframe>
+  class="w-full h-full absolute"
+  [src]="videoUrl"
+  frameborder="0"
+></iframe>
 
 <div class="h-screen bg-white">
   <div
     class="pt-[20%] px-24 text-white absolute h-full bg-gradient-to-r from-black"
   >
-    <h1 class="text-6xl font-bold">{{bannerTitle}}</h1>
+    <h1 class="text-6xl font-bold">{{ bannerTitle }}</h1>
     <p class="inline-block py-6 text-xl w-1/4 flex-wrap">
-      {{bannerOverview}}
+      {{ bannerOverview }}
     </p>
     <div>
       <button
