@@ -1,6 +1,6 @@
 declare var google: any
 
-import {environment} from "../../../environments/environment";
+import {environment} from "../../../environments/environments";
 import {Component, OnInit, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';

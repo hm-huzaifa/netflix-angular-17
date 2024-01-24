@@ -29,7 +29,7 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/src/environments/environment.ts
+/src/environments/environments.ts
 /.angular/cache
 .sass-cache/
 /connect.lock
