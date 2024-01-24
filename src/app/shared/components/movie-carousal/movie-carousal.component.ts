@@ -4,20 +4,29 @@ import {IVideoContent} from "../../models/video-content.interface";
 import {CommonModule} from "@angular/common";
 import {DescriptionPipe} from "../../pipes/description.pipe";
 import {ImagePipe} from "../../pipes/image.pipe";
+import {animate, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-movie-carousal',
   standalone: true,
   imports: [CommonModule, DescriptionPipe, ImagePipe],
   templateUrl: './movie-carousal.component.html',
-  styleUrl: './movie-carousal.component.scss'
+  styleUrl: './movie-carousal.component.scss',
+  animations: [
+    trigger('fade', [
+      transition('void => *', [
+        style({ opacity: 0 }),
+        animate(150, style({ opacity: 1 }))
+      ])
+    ])
+  ]
 })
 export class MovieCarousalComponent implements OnInit, AfterViewInit {
 
   @Input() videoContents: IVideoContent[] = []
   @Input() title!: string
   @ViewChild('swiperContainer') swiperContainer!: ElementRef;
-
+  selectedContent: string | null = null;
 
   ngOnInit() {
   }
@@ -59,7 +68,15 @@ export class MovieCarousalComponent implements OnInit, AfterViewInit {
     })
   }
 
+  setHoverMovie(movie: IVideoContent) {
+    this.selectedContent = movie.title ?? movie.name
+  }
+  clearHoverMovie(movie: IVideoContent) {
+    this.selectedContent = null
+  }
+
   ngAfterViewInit(): void {
     this.initSwiper()
   }
+
 }
