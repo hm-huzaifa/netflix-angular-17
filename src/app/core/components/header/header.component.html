@@ -4,7 +4,8 @@
     <img width="110" src="/assets/netflixLogo.png" alt="" srcset="" height="61">
     <ul *ngFor="let item of navList" class="flex items-center">
       <li
-        class="text-neutral-100 cursor-pointer text-sm font-extrabold hover:text-gray-400 transition-[1s]">{{ item }}
+        class="text-neutral-100 cursor-pointer text-sm font-extrabold hover:text-gray-400 transition-[1s]">
+        <a (click)="scrollToSection(navListWithDash[navList.indexOf(item)])">{{ item }}</a>
       </li>
     </ul>
   </div>

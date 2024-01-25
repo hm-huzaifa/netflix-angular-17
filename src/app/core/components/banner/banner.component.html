@@ -10,7 +10,7 @@
   >
     <h1 class="text-6xl font-bold">{{ bannerTitle }}</h1>
     <p class="inline-block py-6 text-xl w-1/4 flex-wrap">
-      {{ bannerOverview | description: 200 }}
+      {{ bannerOverview ? (bannerOverview | description: 200) : '' }}
     </p>
     <div>
       <button
@@ -23,7 +23,6 @@
       >
         More Info
       </button>
-
     </div>
   </div>
 </div>

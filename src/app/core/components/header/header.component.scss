@@ -1,0 +1,6 @@
+:host {
+  position: sticky;
+  top: 0;
+  background-color: #000; /* Set your desired background color */
+  z-index: 1000; /* Set a higher z-index to ensure the header appears above other elements */
+}
