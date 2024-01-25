@@ -6,11 +6,14 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import {DescriptionPipe} from "../../../shared/pipes/description.pipe";
 
 @Component({
   selector: 'app-banner',
   standalone: true,
-  imports: [],
+    imports: [
+        DescriptionPipe
+    ],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss',
 })

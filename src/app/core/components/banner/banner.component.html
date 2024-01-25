@@ -10,11 +10,11 @@
   >
     <h1 class="text-6xl font-bold">{{ bannerTitle }}</h1>
     <p class="inline-block py-6 text-xl w-1/4 flex-wrap">
-      {{ bannerOverview }}
+      {{ bannerOverview | description: 200 }}
     </p>
     <div>
       <button
-        class="bg-white text-black py-4 px-12 text-xl rounded-lg hover:bg-opacity-70 transition-[1s]"
+        class=" text-white bg-red-700 py-4 px-12 text-xl rounded-lg hover:bg-opacity-70 transition-[1s]"
       >
         Play
       </button>
@@ -23,6 +23,7 @@
       >
         More Info
       </button>
+
     </div>
   </div>
 </div>
